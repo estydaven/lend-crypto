@@ -224,9 +224,18 @@ $('.slider').slick({
     slidesToScroll: 1,
     variableWidth: true,
     prevArrow: '<button type="button" class="slider__bottom slider__bottom_prev"></button>',
-    nextArrow: '<button type="button" class="slider__bottom slider__bottom_next"></button>'
+    nextArrow: '<button type="button" class="slider__bottom slider__bottom_next"></button>',
+    responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          }
+        }
+      ]
 });
-$('.slider-signal__slides').slick({
+$('.slider-signal__slides_desktop').slick({
     centerMode: true,
     slidesToShow: 6,
     focusOnSelect: true,
@@ -243,24 +252,31 @@ $('.slider-signal__slides').slick({
             slidesToShow: 3,
             slidesToScroll: 1
           }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
         }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
+      ]
+});
+$('.slider-for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: false,
+    fade: true,
+    asNavFor: '.slider-nav'
+});
+$('.slider-nav').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    asNavFor: '.slider-for',
+    dots: false,
+    arrows: false,
+    responsive: [
+        {
+            breakpoint: 420,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1
+            }
+          }
       ]
 });
 $('.reviews-slider__wrap').slick({
@@ -272,6 +288,17 @@ $('.reviews-slider__wrap').slick({
     prevArrow: '<button type="button" class="reviews-slider__bottom reviews-slider__bottom_prev"></button>',
     nextArrow: '<button type="button" class="reviews-slider__bottom reviews-slider__bottom_next"></button>',
     dotsClass: 'reviews-slider__dots'
+});
+$(window).on('load resize', function() {
+    if (window.innerWidth < 821) { 
+        $('.access-slider').slick({
+            dots: false,
+            arrows: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            variableWidth: true
+        }); 
+    }
 });
 
 var acc = document.getElementsByClassName("accordion__head");
