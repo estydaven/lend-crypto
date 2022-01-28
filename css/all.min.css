@@ -2735,10 +2735,10 @@ height: 5px;
   .slider__background_after {
     height: 268px;
   }
-  .slider__background_before {
+  .slider__background_range-before {
     height: 185px;
   }
-  .slider__background_after {
+  .slider__background_range-after {
     height: 184px;
   }
   .slider__block_range {
