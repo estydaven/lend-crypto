@@ -2598,6 +2598,10 @@ height: 5px;
   .range__cash::before, .range__cash::after {
     width: 84px;
   }
+  .earn__picture {
+    object-fit: contain;
+    height: 316px;
+  }
 }
 @media (max-width: 422px) {
   .hero {
@@ -2659,6 +2663,9 @@ height: 5px;
   .earn__inner::before {
     left: 161px;
   }
+  .earn__picture {
+    height: 274px;
+  }
 }
 @media (max-width: 400px) {
   .earn-block__inner {
@@ -2679,7 +2686,7 @@ height: 5px;
     font-size: 31px;
   }
   .slider {
-    max-width: 250px;
+    max-width: 300px;
   }
   .message_bot:after {
     bottom: 1px;
@@ -2696,13 +2703,46 @@ height: 5px;
     padding: 0px 5px;
   }
   .slider__background_after {
-    width: 216px;
+    width: 136px;
   }
   .slider__background_before {
-    width: 230px;
+    width: 140px;
   }
   .slider__block {
-    width: 268px;
+    width: 140px;
+    margin: 0 6px;
+    min-height: 290px;
+    padding: 25px 10px 0 10px;
+  }
+  .slider__head {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  .slider__head::after {
+    top: 28px;
+  }
+  .slider__text {
+    font-size: 10px;
+    line-height: 15px;
+  }
+  .slider__number {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .slider__background_before {
+    height: 270px;
+  }
+  .slider__background_after {
+    height: 268px;
+  }
+  .slider__background_before {
+    height: 185px;
+  }
+  .slider__background_after {
+    height: 184px;
+  }
+  .slider__block_range {
+    min-height: 200px;
   }
 }
 @media (max-width: 375px) {
@@ -2728,6 +2768,9 @@ height: 5px;
     height: 149px;
     width: 257px;
   }
+  .earn__picture {
+    height: 247px;
+  }
 }
 @media (max-width: 360px) {
   .message_bot:after {
@@ -2735,6 +2778,19 @@ height: 5px;
   }
   .slider-signal {
     padding: 0 5px 30px 5px;
+  }
+  .earn__picture {
+    height: 247px;
+  }
+  .earn__subtitle {
+    margin-bottom: 10px;
+    line-height: 20px;
+  }
+  .earn__subtitle::after {
+    display: none;
+  }
+  .earn__head {
+    margin-bottom: 15px;
   }
 }
 @media (max-width: 355px) {
@@ -2804,6 +2860,9 @@ height: 5px;
     padding-bottom: 20px;
     background-size: 180%;
   }
+  .earn__picture {
+    height: 228px;
+  }
 }
 @media (max-width: 335px) {
   .reviews-slider__image {
@@ -2812,9 +2871,15 @@ height: 5px;
   .footer {
     padding: 15px 0 335px 0;
   }
+  .earn__picture {
+    height: 221px;
+  }
 }
 @media (max-width: 325px) {
   .reviews-slider__image {
     width: 239px;
+  }
+  .earn__picture {
+    height: 214px;
   }
 }
