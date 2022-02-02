@@ -69,7 +69,7 @@ $('window').ready(function(){
     })
     $('a.scrollto').on('click', function() {let href = $(this).attr('href'); $('html, body').animate({scrollTop: $(href).offset().top }, {duration: 370, easing: "linear"}); return false; });
 
-    $('.price-all__form').on('submit', function(e){
+    $('.price-form').on('submit', function(e){
         e.preventDefault();
         $.cookie('price', $('input[name="price"]:checked').val());
         $.cookie('is_visited', true);
