@@ -14,18 +14,22 @@
 // })();
 
 $('window').ready(function(){
-    let stepInput = $('.quest__one input'),
+    let stepInput = $('.one-quest input'),
     nextStepBtn = $('.next-step'),
     stepsList, body;
     body = $('body');
-    stepsList = $('.quest__one');
-    if($.cookie('visited')){
-        console.log(true);
+    stepsList = $('.one-quest');
+    if($.cookie('is_visited')){
         body.addClass('landing').removeClass('login');
     } else {
-        console.log(false);
         body.addClass('login').removeClass('landing');
+
     }
+    $("#login").attr("href", window.site + '/auth.html');
+    $('.menu-mobile').click(function(){
+        $('.header').toggleClass('header--menu-open');
+    })
+
     $('.quest-number__all').html(stepsList.length);
     stepInput.on('change, input', function(){
         if (stepInput.val){
@@ -37,18 +41,21 @@ $('window').ready(function(){
     })
 
     function stepSwitch(){
-        let nextQuest = $('.quest__one_active').next(),
+        let nextQuest = $('.one-quest--active').next(),
         activeQuest;
-        activeQuest = $('.quest__one_active');
-        activeQuest.addClass('quest__one_passed').removeClass('quest__one_active');
-        nextQuest.addClass('quest__one_active').removeClass('quest__one_hidden');
+        activeQuest = $('.one-quest--active');
+        activeQuest.addClass('one-quest--passed').removeClass('one-quest--active');
+        nextQuest.addClass('one-quest--active').removeClass('one-quest--hidden');
         $('.quest-number__active').html(nextQuest.data('number'));
         nextStepBtn.prop('disabled', true);
-        if (activeQuest.hasClass('quest__one_final')){
+        let progress = 100 * nextQuest.data('number') / stepsList.length;
+        $('.quest__ready').css('width', progress+'%' );
+        if (activeQuest.hasClass('one-quest--final')){
             body.removeClass('quest-page').addClass('loading');
-            animateProgress();
-            $('.wrapper_quest').hide(300);
-            setTimeout(openPrice, 6300);
+            
+            $('.wrapper--quest').hide(300);
+            // $('.wrapper--loading').show(300);
+            setTimeout(openPrice, 7600);
         }
     }
     function openPrice(){
@@ -56,19 +63,36 @@ $('window').ready(function(){
     }
 
     $('.start').on('click', function(){
-        body.removeClass('login landing').addClass('quest-page');
+        // if (!$.cookie('is_visited')){
+            body.removeClass('login landing').addClass('quest-page');
+        // }
     })
+    $('a.scrollto').on('click', function() {let href = $(this).attr('href'); $('html, body').animate({scrollTop: $(href).offset().top }, {duration: 370, easing: "linear"}); return false; });
 
-    $('.price__inner_offer').on('submit', function(e){
+    $('.price-all__form').on('submit', function(e){
         e.preventDefault();
         $.cookie('price', $('input[name="price"]:checked').val());
-        $.cookie('visited', true);
-        console.log($.cookie('price'));
+        $.cookie('is_visited', true);
         body.removeClass('price-land').addClass('landing');
-        $('input[value='+ $.cookie('price') +']').attr('checked', true);
     })
-    $('input[value='+ $.cookie('price') +']').attr('checked', true);
-
+    $('.price-value__radio').on('change', function (e) {
+        e.preventDefault();
+        $.cookie('price', e.target.value);
+        $('input[value='+ e.target.value + ']').prop('checked', true);
+        $('.x_order_form input[name="price"]')
+            .each(function() { const el = $(this); el.val(e.target.value);})
+    })
+    $('input[value='+ $.cookie('price') + ']').prop('checked', true);
+    $('.order__form').on('submit', function(e){
+        e.preventDefault();
+    })
+    if (!$.cookie('stop-timer')){
+        initializeTimer();
+    } else {
+        $('.timer').hide();
+    }
+    $('.x_order_form input[name="price"]')
+        .each(function() { const el = $(this); el.val($.cookie('price'));});
 })
 
 initializeTimer();
