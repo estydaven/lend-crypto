@@ -54,7 +54,6 @@ $('window').ready(function(){
             body.removeClass('quest-page').addClass('loading');
             
             $('.wrapper--quest').hide(300);
-            // $('.wrapper--loading').show(300);
             setTimeout(openPrice, 7600);
         }
     }
@@ -63,11 +62,8 @@ $('window').ready(function(){
     }
 
     $('.start').on('click', function(){
-        // if (!$.cookie('is_visited')){
-            body.removeClass('login landing').addClass('quest-page');
-        // }
+        body.removeClass('login landing').addClass('quest-page');
     })
-    $('a.scrollto').on('click', function() {let href = $(this).attr('href'); $('html, body').animate({scrollTop: $(href).offset().top }, {duration: 370, easing: "linear"}); return false; });
 
     $('.price-form').on('submit', function(e){
         e.preventDefault();
@@ -75,45 +71,31 @@ $('window').ready(function(){
         $.cookie('is_visited', true);
         body.removeClass('price-land').addClass('landing');
     })
-    $('.price-value__radio').on('change', function (e) {
-        e.preventDefault();
-        $.cookie('price', e.target.value);
-        $('input[value='+ e.target.value + ']').prop('checked', true);
-        $('.x_order_form input[name="price"]')
-            .each(function() { const el = $(this); el.val(e.target.value);})
-    })
-    $('input[value='+ $.cookie('price') + ']').prop('checked', true);
-    $('.order__form').on('submit', function(e){
-        e.preventDefault();
-    })
     if (!$.cookie('stop-timer')){
         initializeTimer();
     } else {
         $('.timer').hide();
     }
-    $('.x_order_form input[name="price"]')
-        .each(function() { const el = $(this); el.val($.cookie('price'));});
 })
 
-initializeTimer();
- function initializeTimer() {
+function initializeTimer() {
 
-                if (!localStorage.getItem("ever-timer")) {
-                    var time = {
-                        hours: 0,
-                        minutes: 27,
-                        seconds: 0
-                    };
+    if (!localStorage.getItem("ever-timer")) {
+        var time = {
+            hours: 0,
+            minutes: 15,
+            seconds: 0
+        };
 
-                    time = time.hours * 3600 + time.minutes * 60 + time.seconds;
+        time = time.hours * 3600 + time.minutes * 60 + time.seconds;
 
-                    localStorage.setItem("time", time);
-                    localStorage.setItem("ever-timer", true);
-                }
+        localStorage.setItem("time", time);
+        localStorage.setItem("ever-timer", true);
+    }
 
-                timerSettings();
+    timerSettings();
 
-            }
+}
 
             function timerSettings() {
                 var time = localStorage.getItem('time'),
@@ -132,6 +114,7 @@ initializeTimer();
 
                 if (--time < 0) {
                     localStorage.removeItem("ever-timer");
+                    initializeTimer();
                     return;
                 }
                 if (different) {
