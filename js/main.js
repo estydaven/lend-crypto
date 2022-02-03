@@ -357,46 +357,7 @@ const changeLectionCondition = () => {
 }
 
 moreButton.addEventListener('click', changeLectionCondition);
-// $(window).on('load resize', function() {
-//     if (window.innerWidth < 651) { 
-//         $('.advantages').slick({
-//             dots: true,
-//             arrows: true,
-//             infinite: true,
-//             speed: 300,
-//             slidesToShow: 1,
-//             slidesToScroll: 1,
-//             variableWidth: true,
-//             prevArrow: '<button type="button" class="advantages__slider__bottom advantages__slider__bottom_advantage advantages__slider__bottom_prev"></button>',
-//             nextArrow: '<button type="button" class="advantages__slider__bottom advantages__slider__bottom_advantage advantages__slider__bottom_next"></button>',
-//             dotsClass: 'reviews__slider__dots'
-//         });  
-//         $('.mistakes__inner').slick({
-//             dots: true,
-//             arrows: true,
-//             infinite: true,
-//             speed: 300,
-//             slidesToShow: 1,
-//             slidesToScroll: 1,
-//             variableWidth: true,
-//             prevArrow: '<button type="button" class="advantages__slider__bottom advantages__slider__bottom_prev"></button>',
-//             nextArrow: '<button type="button" class="advantages__slider__bottom advantages__slider__bottom_next"></button>',
-//             dotsClass: 'reviews__slider__dots'
-//         });  
-//         $('.result').slick({
-//             dots: true,
-//             arrows: true,
-//             infinite: true,
-//             speed: 300,
-//             slidesToShow: 1,
-//             slidesToScroll: 1,
-//             variableWidth: true,
-//             prevArrow: '<button type="button" class="result__slider__bottom result__slider__bottom_prev"></button>',
-//             nextArrow: '<button type="button" class="result__slider__bottom result__slider__bottom_next"></button>',
-//             dotsClass: 'reviews__slider__dots reviews__slider__dots_result'
-//         });   
-//     }
-// });
+
 function format(t) {
     return t.toFixed(0).replace(/./g, function(t, e, n) {
         return 0 < e && "." !== t && (n.length - e) % 3 == 0 ? " " + t : t
