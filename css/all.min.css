@@ -2056,6 +2056,9 @@ height: 5px;
   top: 66px;
   background: linear-gradient(94.22deg, #E541D3 -4.74%, #02F1F6 101.25%);
 }
+.quest__header_fifth::after {
+  top: 145px;
+}
 .quest__title {
   font-size: 36px;
   line-height: 43px;
@@ -3460,6 +3463,9 @@ transition: all .3s linear;
   .quest__header::after {
     top: 55px;
   }
+  .quest__header_fifth::after {
+    top: 140px;
+  }
   .questions {
     padding-left: 20px;
     padding-right: 20px;
@@ -3541,6 +3547,16 @@ transition: all .3s linear;
   .wrapper--price {
     padding-left: 30px !important;
     padding-right: 30px;
+  }
+}
+@media (max-width: 1055px) {
+  .quest__header_eights::after {
+    top: 91px;
+  }
+}
+@media (max-width: 1042px) {
+  .quest__header_fifth::after {
+    top: 180px;
   }
 }
 @media (max-width: 1024px) {
@@ -3735,6 +3751,9 @@ transition: all .3s linear;
   .quest__header_last::after {
     top: 97px;
   }
+  .quest__header_seventh::after {
+    top: 55px;
+  }
 }
 @media (max-width: 900px) {
   .quest {
@@ -3747,6 +3766,16 @@ transition: all .3s linear;
   }
   .price-btns__label_test {
     margin-right: 0;
+  }
+}
+@media (max-width: 848px) {
+  .quest__header_seventh::after {
+    top: 91px;
+  }
+}
+@media (max-width: 825px) {
+  .quest__header_fifth::after {
+    top: 220px;
   }
 }
 @media (max-width: 820px) {
@@ -4046,6 +4075,11 @@ transition: all .3s linear;
       width: 100%;
   }
 }
+@media (max-width: 733px) {
+  .quest__header_sixth:after {
+    top: 93px;
+  }
+}
 @media (max-width: 670px) {
   .analytics__title {
     margin: 0 0 30px 10px;
@@ -4306,10 +4340,21 @@ transition: all .3s linear;
   .slider-signal::before {
     display: none;
   }
+  .quest__header_fifth::after {
+    display: none;
+  }
+}
+@media (max-width: 598px) {
+  .quest__header_fourth::after {
+    top: 94px;
+  }
 }
 @media (max-width: 571px) {
   .quest__header_last::after {
     top: 136px;
+  }
+  .quest__header_seventh::after {
+    top: 94px;
   }
 }
 @media (max-width: 560px) {
@@ -4394,6 +4439,11 @@ transition: all .3s linear;
     line-height: 25px;
   }
 }
+@media (max-width: 519px) {
+  .quest__header_seventh::after {
+    top: 135px;
+  }
+}
 @media (max-width: 480px) {
   .earn__inner::before {
     left: 197px;
@@ -4467,6 +4517,11 @@ transition: all .3s linear;
   }
   .test-price__head {
     font-size: 16px;
+  }
+}
+@media (max-width: 425px) {
+  .quest__header_sixth:after {
+    top: 56px;
   }
 }
 @media (max-width: 422px) {
@@ -4692,6 +4747,11 @@ transition: all .3s linear;
     width: 241px;
   }
 }
+@media (max-width: 350px) {
+  .quest__header_fourth::after {
+    top: 58px;
+  }
+}
 @media (max-width: 345px) {
   .reviews-slider__image {
     width: 244px;
@@ -4782,6 +4842,9 @@ transition: all .3s linear;
   }
   .quest__header_last::after {
     top: 82px;
+  }
+  .quest__header_seventh::after {
+    top: 56px;
   }
   .test-price__inner {
     font-size: 50px;
